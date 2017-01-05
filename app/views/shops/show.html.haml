@@ -1,0 +1,35 @@
+- provide(:title, t('.title'))
+
+- content_for :lgside_body do
+  .product-ctn
+    %p
+      %b 机构名称:
+      = @shop.name
+    %p
+      %b 机构介绍:
+      = @shop.introduction.html_safe
+    %p
+      %b 联系人:
+      = @shop.contact
+    %p
+      %b 电话:
+      = @shop.phone
+    %p
+      %b 固定电话:
+      = @shop.telephone
+    %p
+      %b 邮箱:
+      = @shop.email
+    %p
+      %b 官方网址:
+      = @shop.website
+    %p
+      %b 图片:
+      = image_tag @shop.file, {:style => "width: 150px; border: 1px solid #e6e6e6;"}
+
+    = link_to 'Edit', edit_shop_path(@shop)
+    \|
+    = link_to 'Back', shops_path
+    = link_to '新建服务', new_shop_product_path(@shop), :class => "btn btn-success"
+
+= render "layouts/control_panel"

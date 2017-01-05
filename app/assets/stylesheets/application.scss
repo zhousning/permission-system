@@ -1,0 +1,12 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "home";
+@import "users";
+@import "services";
+@import "institutions";
+@import "footer";
+@import "products";
+@import "shops";
+@import "common";
+@import "public";

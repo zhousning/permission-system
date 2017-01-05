@@ -1,0 +1,17 @@
+- provide(:title, t('.title'))
+
+- content_for :lgside_body do
+  .product-ctn
+    %p
+      %b Name:
+      = @product.name
+    %p
+      %b Price:
+      = @product.price
+    %p
+      %b Details:
+      = @product.details.html_safe
+
+    = link_to 'Edit', edit_product_path(@product)
+    \|
+    = link_to 'Back', products_path

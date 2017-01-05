@@ -1,0 +1,24 @@
+- provide(:title, t('.title'))
+
+- content_for :lgside_body do
+  %table.table.table-inbox.table-hover
+    %tbody
+      %tr
+        %th ID
+        %th 服务名称
+        %th 价格
+        %th 操作
+      - @products.each do |product|
+        %tr.unread
+          %td.inbox-small-cells
+            = product.id
+          %td.view-message.dont-show
+            = product.name
+          %td.view-message.dont-show
+            = product.price
+          %td.view-message.text-right
+            = link_to "编辑", edit_product_path(product), :class => "btn btn-default"
+            = link_to "查看", product_path(product), :class => "btn btn-default"
+            = link_to "删除", product, :method => :delete, :data => {:confirm => "确定删除当前服务吗?"}, :class => "btn btn-default"
+
+= render "layouts/control_panel"

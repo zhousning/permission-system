@@ -1,0 +1,62 @@
+- provide(:title, t('.title'))
+
+.service-section
+  .container
+    %ol.breadcrumb.service-breadcrumb
+      %li
+        = link_to root_path do
+          %span.glyphicon.glyphicon-home
+          首页
+      %li.active
+        服务项目
+    .service-label-ctn
+      .row
+        .col-md-1
+          %span.service-label-title
+            服务类别:
+        .col-md-10
+          %ul.service-label-list
+            %li
+              = link_to "全部", nil, :class => "btn on"
+            %li
+              = link_to "技术服务", nil, :class => "btn"
+            %li
+              = link_to "检验检测", nil, :class => "btn"
+      .row
+        .col-md-1
+          %span.service-label-title
+            所在省份:
+        .col-md-10
+          %ul.service-label-list
+            %li
+              = link_to "全部", nil, :class => "btn on"
+            %li
+              = link_to "吉林市", nil, :class => "btn"
+            %li
+              = link_to "长春市", nil, :class => "btn"
+      .row
+        .col-md-1
+          %span.service-label-title
+            服务领域:
+        .col-md-10
+          %ul.service-label-list
+            %li
+              = link_to "全部", nil, :class => "btn on"
+            %li
+              = link_to "计算机技术", nil, :class => "btn"
+            %li
+              = link_to "大企业用电技术", nil, :class => "btn"
+    .row-15.service-list
+      - @products.each do |product|
+        .col-md-15
+          .service-item
+            = link_to service_path(product) do
+              .img-box
+                = image_tag product.attachments.first.file
+              %h3.name.text-overflow{:title => product.name}
+                = product.name
+              %p.name.text-overflow{:title => product.shop.name}
+                = product.shop.name
+              %p.price.text-overflow{:title => product.price}
+                = product.price
+

@@ -1,0 +1,29 @@
+%nav.navbar.navbar-inverse.navbar-fixed-top
+  .container
+    .navbar-header
+      %a.navbar-brand{:href => root_path} 大仪平台
+    #navbar.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{:href => institutions_path} 机构列表
+        %li
+          %a{:href => services_path} 服务列表
+      %ul.nav.navbar-nav.navbar-right
+        - unless user_signed_in?
+          %li
+            %a{:href => "#"}
+              %span.glyphicon.glyphicon-question-sign
+              HELP
+          %li
+            = link_to new_user_registration_path do
+              %span.glyphicon.glyphicon-user
+                注册
+          %li
+            = link_to "登录", new_user_session_path
+        - else
+          %li
+            = link_to current_user.email, nil 
+          %li
+            = link_to "个人中心", control_users_path
+          %li
+            %a{:href=>destroy_user_session_path, "data-method"=>"delete"} 注销

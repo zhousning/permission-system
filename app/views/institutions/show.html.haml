@@ -1,0 +1,75 @@
+- provide(:title, t('.title'))
+
+.service-section
+  .container
+    %ol.breadcrumb.service-breadcrumb
+      %li
+        = link_to root_path do
+          %span.glyphicon.glyphicon-home
+          首页
+      %li
+        = link_to institutions_path do
+          服务机构
+      %li.active
+        服务机构详情
+.service-company
+  .container
+    %h1= @shop.name
+
+= render "layouts/second_header"
+
+.container
+  .institution-head-ctn
+    .word
+      %span.glyphicon.glyphicon-th-large
+      服务项目
+    .more
+      = link_to "更多 >", nil, :class => "btn"
+  .row-15
+    - @shop.products.each do |product|
+      .col-md-15
+        .service-item
+          = link_to service_path(product) do
+            .img-box
+              = image_tag product.attachments.first.file
+            %h3.name.text-overflow{:title => product.name}
+              = product.name
+            %p.name.text-overflow{:title => product.shop.name}
+              = product.shop.name
+            %p.price.text-overflow{:title => product.price}
+              = product.price
+
+.container
+  .institution-head-ctn
+    .word
+      %span.glyphicon.glyphicon-bullhorn
+      机构介绍
+  .text-just
+    = @shop.introduction.html_safe
+
+.container
+  .institution-head-ctn
+    .word
+      %span.glyphicon.glyphicon-phone-alt
+      联系方式
+  .text-just
+    %p
+      %span.glyphicon.glyphicon-user
+      联系人:
+      = @shop.contact
+    %p
+      %span.glyphicon.glyphicon-earphone
+      手机:
+      = @shop.phone
+    %p
+      %span.glyphicon.glyphicon-phone-alt
+      固定电话:
+      = @shop.telephone
+    %p
+      %span.glyphicon.glyphicon-envelope
+      邮箱:
+      = @shop.email
+    %p
+      %span.glyphicon.glyphicon-globe
+      网址:
+      = @shop.website

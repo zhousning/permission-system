@@ -1,0 +1,27 @@
+= form_for @shop do |f|
+  .mail-option
+    = f.submit '保存', :class => "btn btn-default"
+  .form-group
+    = f.label :name
+    = f.text_field :name, :class => "form-control"
+  .form-group
+    = f.label :introduction
+    = f.kindeditor :introduction
+  .form-group
+    = f.label :contact
+    = f.text_field :contact, :class => "form-control"
+  .form-group
+    = f.label :phone
+    = f.text_field :phone, :class => "form-control"
+  .form-group
+    = f.label :telephone
+    = f.text_field :telephone, :class => "form-control"
+  .form-group
+    = f.label :email
+    = f.text_field :email, :class => "form-control"
+  .form-group
+    = f.label :website
+    = f.text_field :website, :class => "form-control"
+  .form-group
+    = f.label :file
+    = f.file_field :file, :class => "form-control"

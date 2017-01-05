@@ -1,0 +1,80 @@
+- provide(:title, t('.title'))
+
+.service-section
+  .container
+    %ol.breadcrumb.service-breadcrumb
+      %li
+        = link_to root_path do
+          %span.glyphicon.glyphicon-home
+          首页
+      %li.active
+        服务机构
+    .service-label-ctn
+      .row
+        .col-md-1
+          %span.service-label-title
+            服务类别:
+        .col-md-10
+          %ul.service-label-list
+            %li
+              = link_to "全部", nil, :class => "btn on"
+            %li
+              = link_to "技术服务", nil, :class => "btn"
+            %li
+              = link_to "检验检测", nil, :class => "btn"
+      .row
+        .col-md-1
+          %span.service-label-title
+            所在省份:
+        .col-md-10
+          %ul.service-label-list
+            %li
+              = link_to "全部", nil, :class => "btn on"
+            %li
+              = link_to "吉林市", nil, :class => "btn"
+            %li
+              = link_to "长春市", nil, :class => "btn"
+      .row
+        .col-md-1
+          %span.service-label-title
+            服务领域:
+        .col-md-10
+          %ul.service-label-list
+            %li
+              = link_to "全部", nil, :class => "btn on"
+            %li
+              = link_to "计算机技术", nil, :class => "btn"
+            %li
+              = link_to "大企业用电技术", nil, :class => "btn"
+.container
+  - @shops.each do |shop|
+    .institution-ctn
+      .row
+        .col-md-2
+          .img-box
+            = image_tag shop.file
+        .col-md-4
+          %h2.title
+            = link_to institution_path(shop) do
+              = shop.name
+          %p.title-sm
+            机构类型： 企业（含转制院所）
+          %p.title-sm
+            服务类别：检验检测
+          %p.title-sm
+            服务领域：生物医药及器械
+        .col-md-3
+          .row.record
+            .col-md-4
+              %p.top 34
+              %p.bottom 服务数
+            .col-md-4
+              %p.top 99.8%
+              %p.bottom 好评率
+            .col-md-4
+              %p.top 344
+              %p.bottom 成交量
+        .col-md-3.text-center
+          = link_to institution_path(shop), :class => "btn into" do
+            %span.glyphicon.glyphicon-log-in
+            进入机构店铺

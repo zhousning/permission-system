@@ -1,0 +1,266 @@
+// Place all the styles related to the services controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* service index start */
+.services.index{
+  background: #f5f5f5;
+}
+
+.service-breadcrumb{
+  margin-bottom: 5px;
+  margin-top: 10px;
+  background: transparent;
+  li a{
+    color: #777;
+  }
+}
+
+/* service list start  */
+$main_color: #48B7E3;
+.service-list{
+  padding: 25px 0;
+}
+.service-item{
+  padding: 14px;
+  margin-bottom: 15px;
+  height: 330px;
+  border: 1px solid #e6e6e6;
+  overflow: hidden;
+  background: #FFF;
+  &:hover{
+    border-color: $main_color;
+  }
+  a{
+    display: block;
+    &:hover, &:focus, &:visited, &:active{
+      text-decoration: none;
+    }
+  }
+  .img-box{
+    height: 190px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 190px;
+    img{
+      width: 100%;
+    }
+  }
+  h3.name{
+    color: #666;
+    font-size: 18px;
+  }
+  p.name{
+    font-size: 12px;
+    color: #666;
+  }
+  p.price{
+    color: #c8161d;
+    font-size: 18px;
+  }
+}
+/* service list end */
+
+/* service label start */
+.service-label-ctn{
+  padding: 25px 15px;
+  padding-left: 50px;
+  border: 1px solid #e6e6e6;
+  background: #FFF;
+  .row{
+    padding-top: 15px;
+    padding-bottom: 5px;
+  }
+}
+.service-label-title{
+  display: block;
+  line-height: 30px;
+  font-weight: bold;
+  color: #666;
+}
+.service-label-list{
+  padding-left: 0;
+  li{
+    margin-left: 15px;
+    list-style: none;
+    display: inline-block;
+    a{
+      color: #333;
+      border-radius: 0;
+      padding: 2px 10px;
+      &.on{
+        background: $main_color;
+        color: #FFF;
+        &:hover{
+          color: #FFF;
+        }
+      }
+      &:hover{
+        color: $main_color;
+      }
+      &:active{
+        box-shadow: none;
+      }
+    }
+  }
+}
+/* service label end */
+
+/* service index end */
+
+/* service show start */
+.service-company{
+  padding: 20px 0;
+  background: $main_color;
+  color: #FFF;
+  h1{
+    text-align: center;
+  }
+}
+.service-nav-ctn{
+  background: #e5e5e5;
+  ul{
+    padding-left: 0;
+    margin-bottom: 0;
+    li{
+      list-style: none;
+      display: inline-block;
+      a{
+        border-radius: 0;
+        padding: 12px 30px;
+        color: #333;
+        font-size: 18px;
+        &:hover{
+          background: $main_color;
+          color: #FFF;
+        }
+      }
+    }
+  }
+}
+.service-buy-ctn{
+  margin-top: 30px;
+  border: 1px solid #e6e6e6;
+  background: #FFF;
+  .img-box{
+    padding: 10px;
+    img{
+      width: 100%;
+    }
+  }
+  .img-sm-box{
+    padding: 0 10px;
+    padding-bottom: 5px;
+    width: 100%;
+    overflow: hidden;
+    ul{
+      padding-left: 0;
+      margin-bottom: 0;
+    }
+    li{
+      $val: 50px;
+      width: $val;
+      height: $val;
+      list-style: none;
+      display: inline-block;
+      overflow: hidden;
+      border: 1px solid #e6e6e6;
+      padding: 2px;
+      img{
+        width: 100%;
+      }
+    }
+  }
+  .title{
+    margin-top: 35px;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .price{
+    padding: 15px 12px;
+    background: #fdeeef;
+    span{
+      display: inline-block;
+      line-height: 34px;
+    }
+    .p-title{
+      width: 60px;
+      color: #999;
+      font-size: 16px;
+    }
+    .p-word{
+      color: #c8161d;
+      font-size: 24px;
+    }
+  }
+}
+.buy-btn-ctn{
+  padding: 35px 0;
+}
+.btn-buy{
+  margin-right: 15px;
+  width: 180px;
+  line-height: 46px;
+  padding: 0;
+  background: #c8161d;
+  color: #FFF;
+  font-size: 20px;
+  &:hover{
+    color: #FFF;
+  }
+}
+.btn-buy.cart{
+  background: #f40;
+}
+.service-hot{
+  height: 500px;
+  border: 1px solid #e6e6e6;
+}
+.service-detail{
+  text-align: justify;
+  text-justify: inter-ideograph;
+  .head{
+    background: #f0f0f0;
+    ul{
+      padding-left: 0;
+      margin-bottom: 0;
+      li{
+        padding: 15px 40px;
+        font-size: 16px;
+        list-style: none;
+        display: inline-block;
+        border-top: 2px solid #f2f2f2;
+        &.on{
+          background: #FFF;
+          border-color: $main_color;
+        }
+      }
+    }
+  }
+  .body{
+    .title{
+      background: #f2f2f2;
+      span{
+        display: inline-block;
+        margin-left: 15px;
+        background: #FFF;
+        padding: 13px 20px;
+        font-size: 18px;
+      }
+    }
+    .content{
+      overflow: hidden;
+      padding: 20px 15px;
+      p{
+        font-size: 15px;
+        line-height: 26px;
+      }
+      img{
+        max-width: 100%;
+      }
+    }
+  }
+}
+/* service show end */

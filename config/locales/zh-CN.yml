@@ -1,0 +1,87 @@
+zh-CN:
+  layouts:
+    application:
+      site_title: "大型仪器共享平台"
+    application_control:
+      site_title: "大型仪器共享平台"
+
+  home:
+    index:
+      title: "首页"
+
+  institutions:
+    index:
+      title: "服务机构"
+    show:
+      title: "机构详情"
+
+  services:
+    index:
+      title: "服务项目"
+    show:
+      title: "项目详情"
+
+  users:
+    control:
+      title: "个人中心"
+    manage:
+      title: "访问用户管理所有资源"
+    index:
+      title: "用户管理"
+    show:
+      title: "用户详情"
+    edit:
+      title: "编辑用户"
+    registrations:
+      new:
+        title: "用户注册"
+    confirmations:
+      new:
+        title: "重新发送邮件"
+    sessions:
+      new:
+        title: "用户登录"
+    binding:
+      title: "绑定帐号"
+    sendmail:
+      title: "邮件已发送"
+    confirm:
+      title: "邮箱已确认"
+    agreement:
+      title: "用户协议"
+
+  shops:
+    manage:
+      title: "访问机构管理所有资源"
+    index:
+      title: "机构管理"
+    new:
+      title: "新建机构"
+    show:
+      title: "机构详情"
+    edit:
+      title: "编辑机构"
+
+  products:
+    manage:
+      title: "访问服务管理所有资源"
+    index:
+      title: "服务管理"
+    new:
+      title: "新建服务"
+    show:
+      title: "服务详情"
+    edit:
+      title: "编辑服务"
+
+  roles:
+    manage:
+      title: "访问角色管理所有资源"
+    index:
+      title: "角色管理"
+    new:
+      title: "新建角色"
+    show:
+      title: "角色详情"
+    edit:
+      title: "编辑角色"

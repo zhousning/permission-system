@@ -1,0 +1,20 @@
+= form_for [@shop, @product] do |f|
+  .mail-option
+    = f.submit '保存', :class => "btn btn-default"
+  .form-group
+    = f.label :name
+    = f.text_field :name, :class => "form-control"
+  .form-group
+    = f.label :price
+    = f.text_field :price, :class => "form-control"
+  .form-group
+    = f.label :details
+    = f.kindeditor :details
+  .form-group
+    = f.label "截图附件", :class => "control-label"
+    = f.fields_for :attachments do |attachment|
+      = render 'attachment_fields', f: attachment
+    .links
+      = link_to_add_association f, :attachments, :class => "btn" do
+        %span.glyphicon.glyphicon-paperclip
+        添加图片

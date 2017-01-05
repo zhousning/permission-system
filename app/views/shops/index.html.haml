@@ -1,0 +1,27 @@
+- provide(:title, t('.title'))
+
+- content_for :lgside_body do
+  .mail-option
+    = link_to "新建店铺", new_shop_path, :class => "btn btn-default"
+  %table.table.table-inbox.table-hover
+    %tbody
+      %tr
+        %th ID
+        %th 机构名称
+        %th 联系人
+        %th 操作
+      - @shops.each do |shop|
+        %tr.unread
+          %td.inbox-small-cells
+            = shop.id
+          %td.view-message.dont-show
+            = shop.name
+          %td.view-message.dont-show
+            = shop.contact
+          %td.view-message.text-right
+            = link_to "编辑", edit_shop_path(shop), :class => "btn btn-default"
+            = link_to "查看", shop_path(shop), :class => "btn btn-default"
+            = link_to "删除", shop, :method => :delete, :data => {:confirm => "确定删除当前店铺吗?"}, :class => "btn btn-default"
+
+= render "layouts/control_panel"
+

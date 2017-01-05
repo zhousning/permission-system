@@ -1,0 +1,89 @@
+- provide(:title, t('.title'))
+
+.service-section
+  .container
+    %ol.breadcrumb.service-breadcrumb
+      %li
+        = link_to root_path do
+          %span.glyphicon.glyphicon-home
+          首页
+      %li
+        = link_to services_path do
+          服务项目
+      %li.active
+        服务项目详情
+.service-company
+  .container
+    %h1= @product.shop.name
+
+= render "layouts/second_header"
+
+.container
+  .service-buy-ctn
+    .row
+      .col-md-4
+        .img-box
+          = image_tag @product.attachments.first.file
+        .img-sm-box
+          %ul
+            - @product.attachments.each do |attachment|
+              %li
+                = image_tag attachment.file
+      .col-md-5
+        %h1.title= @product.name
+        .price
+          %span.p-title 价格
+          %span.p-word= @product.price
+        .buy-btn-ctn
+          = link_to "立即购买", nil, :class => "btn btn-buy"
+          = link_to nil, :class => "btn btn-buy cart" do
+            %span.glyphicon.glyphicon-shopping-cart
+            加入购物车
+      .col-md-3
+        %h4.text-center 企业资质
+.container.mt30
+  .row
+    .col-md-3
+      .service-hot
+        %h4.text-center 热卖商品
+    .col-md-9
+      .service-detail
+        .head
+          %ul
+            %li.on
+              服务详情
+            %li
+              累计评价(100)
+            %li
+              订购记录(150)
+        .body
+          .detail-section
+            .content
+              = @product.details.html_safe
+          .detail-section
+            .title
+              %span
+                单位介绍
+            .content
+              = @product.shop.introduction.html_safe
+          .detail-section
+            .title
+              %span
+                联系我们
+            .content
+              %p
+                联系人:
+                = @product.shop.contact
+              %p
+                手机:
+                = @product.shop.phone
+              %p
+                固定电话:
+                = @product.shop.telephone
+              %p
+                邮箱:
+                = @product.shop.email
+              %p
+                网址:
+                = @product.shop.website
+
